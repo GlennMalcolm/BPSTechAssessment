@@ -4,69 +4,92 @@
   <meta charset="UTF-8" />
   <title>Bangkok Patana Primary Technology Assessment</title>
   <style>
-    /* Example colour variables (approximate) */
+    /* Colour Variables */
     :root {
-      --school-red:   #9B1C2F; /* Deep red */
-      --school-navy:  #002855; /* Dark navy */
-      --school-grey:  #8B8682; /* Warm grey */
-      --school-white: #FFFFFF; /* White */
+      --patana-grey:       #84776d;
+      --patana-montrachet: #991a36; 
+      --patana-blue:       #002857;
+      --white:             #ffffff;
     }
 
-    body {
+    /* Basic Reset & Body Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
       font-family: Arial, sans-serif;
-      background-color: var(--school-grey); /* Subtle grey background */
+      background-color: var(--patana-grey);
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 1rem;
     }
 
-    /* Header / Title */
+    /* Header */
     header {
-      background-color: var(--school-navy);
-      color: var(--school-white);
+      background-color: var(--patana-blue);
+      color: var(--white);
       width: 100%;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
+      margin-bottom: 1rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      margin-bottom: 2rem;
     }
     header h1 {
-      margin: 0;
       font-size: 1.5rem;
+      margin: 0;
     }
 
-    /* Container for the buttons */
+    /* Subheading */
+    h2 {
+      color: var(--patana-blue);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    /* Container for Year Buttons */
     .year-container {
+      /* Responsive grid that expands/shrinks automatically */
       display: grid;
-      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1rem;
-      width: 90%;
-      max-width: 400px;
+      width: 100%;
+      max-width: 600px; /* Control maximum width on large screens */
       margin: 0 auto;
     }
 
     /* Year Group Buttons */
     .year-button {
-      background-color: var(--school-red);
-      color: var(--school-white);
+      background-color: var(--patana-montrachet);
+      color: var(--white);
       border: none;
-      border-radius: 1rem;  /* Rounded corners */
-      padding: 1rem;
+      border-radius: 1rem;
+      /* Make each button a flexible square (or near-square) */
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.2rem;
+      font-weight: bold;
       cursor: pointer;
-      text-align: center;
       transition: background-color 0.3s ease;
     }
     .year-button:hover {
-      background-color: var(--school-navy);
+      background-color: var(--patana-blue);
     }
 
-    /* Mobile-friendly layout adjustments */
+    /* For very small screens, you can adjust spacing or font sizes if needed */
     @media (max-width: 480px) {
-      .year-container {
-        grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+      header h1 {
+        font-size: 1.2rem;
+      }
+      .year-button {
+        font-size: 1rem;
       }
     }
   </style>
@@ -76,6 +99,9 @@
   <header>
     <h1>Bangkok Patana Primary Technology Assessment</h1>
   </header>
+
+  <!-- Subheading -->
+  <h2>Choose a Year Group</h2>
 
   <div class="year-container">
     <button class="year-button">Year 1</button>
