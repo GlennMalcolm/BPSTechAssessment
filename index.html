@@ -4,21 +4,20 @@
   <meta charset="UTF-8" />
   <title>Bangkok Patana Primary Technology Assessment</title>
   <style>
-    /* Colour Variables from your specs */
+    /* Patana Colours */
     :root {
-      --patana-grey:       #84776d;
-      --patana-montrachet: #991a36;
-      --patana-blue:       #002857;
+      --patana-grey:       #84776d;  /* Pantone Warm Grey 8 */
+      --patana-montrachet: #991a36;  /* Pantone 202        */
+      --patana-blue:       #002857;  /* Pantone 540        */
       --white:             #ffffff;
     }
 
-    /* Basic Reset */
+    /* Reset & Body */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: Arial, sans-serif;
       background-color: var(--patana-grey);
@@ -46,10 +45,10 @@
     }
 
     /*
-      Main container for Year buttons:
-      - Exactly 2 columns, 3 rows.
-      - Takes up (roughly) the full screen height minus header & subheading space.
-      - Adjust 200px to suit your actual header/subheading height.
+      Main container:
+      - Fixed 2 columns, 3 rows (total 6 buttons).
+      - Fills most of screen height (adjust 200px if your header is taller/shorter).
+      - Wider max-width (900px) for a larger “tile” look on bigger screens.
     */
     .year-container {
       display: grid;
@@ -57,13 +56,13 @@
       grid-template-rows: repeat(3, 1fr);
       height: calc(100vh - 200px);
       width: 100%;
-      max-width: 600px;
+      max-width: 900px; 
       margin: 0 auto;
       gap: 1rem;
       padding: 1rem;
     }
 
-    /* Year Group Buttons: Large "tiles" filling each grid cell */
+    /* Year Group Tiles */
     .year-button {
       background-color: var(--patana-montrachet);
       border: none;
@@ -80,7 +79,7 @@
       background-color: var(--patana-blue);
     }
 
-    /* Responsive tweaks for smaller screens */
+    /* Smaller screens: adjust font sizes if needed */
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.2rem;
