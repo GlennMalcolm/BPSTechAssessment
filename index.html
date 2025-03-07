@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Bangkok Patana Primary Technology Assessment</title>
   <style>
-    /* Colour Variables */
+    /* Colour Variables (based on your provided values) */
     :root {
       --patana-grey:       #84776d;
       --patana-montrachet: #991a36; 
@@ -24,7 +24,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
       padding: 1rem;
     }
@@ -52,29 +51,33 @@
       text-align: center;
     }
 
-    /* Container for Year Buttons */
+    /* Container for Year Buttons:
+       2 columns, 3 rows => 6 total buttons. 
+       Increased gap and width to make buttons larger. */
     .year-container {
-      /* Responsive grid that expands/shrinks automatically */
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-      width: 100%;
-      max-width: 600px; /* Control maximum width on large screens */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 90%;           /* Fill most of the screen width on mobile */
+      max-width: 600px;     /* Prevent columns from stretching too wide on desktop */
       margin: 0 auto;
     }
 
-    /* Year Group Buttons */
+    /* Year Group Buttons:
+       - Increased font size
+       - Aspect-ratio + min-height to ensure large, square-ish buttons 
+         for easy tapping on tablets/phones */
     .year-button {
       background-color: var(--patana-montrachet);
       color: var(--white);
       border: none;
       border-radius: 1rem;
-      /* Make each button a flexible square (or near-square) */
       aspect-ratio: 1;
+      min-height: 160px;    /* Forces a larger clickable area on smaller screens */
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 2rem;
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -83,13 +86,13 @@
       background-color: var(--patana-blue);
     }
 
-    /* For very small screens, you can adjust spacing or font sizes if needed */
+    /* Responsive adjustments if desired */
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.2rem;
       }
       .year-button {
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -100,7 +103,6 @@
     <h1>Bangkok Patana Primary Technology Assessment</h1>
   </header>
 
-  <!-- Subheading -->
   <h2>Choose a Year Group</h2>
 
   <div class="year-container">
