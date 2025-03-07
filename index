@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bangkok Patana Primary Technology Assessment</title>
+  <style>
+    /* Example colour variables (approximate) */
+    :root {
+      --school-red:   #9B1C2F; /* Deep red */
+      --school-navy:  #002855; /* Dark navy */
+      --school-grey:  #8B8682; /* Warm grey */
+      --school-white: #FFFFFF; /* White */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--school-grey); /* Subtle grey background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header / Title */
+    header {
+      background-color: var(--school-navy);
+      color: var(--school-white);
+      width: 100%;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Container for the buttons */
+    .year-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 1rem;
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Year Group Buttons */
+    .year-button {
+      background-color: var(--school-red);
+      color: var(--school-white);
+      border: none;
+      border-radius: 1rem;  /* Rounded corners */
+      padding: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .year-button:hover {
+      background-color: var(--school-navy);
+    }
+
+    /* Mobile-friendly layout adjustments */
+    @media (max-width: 480px) {
+      .year-container {
+        grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bangkok Patana Primary Technology Assessment</h1>
+  </header>
+
+  <div class="year-container">
+    <button class="year-button">Year 1</button>
+    <button class="year-button">Year 2</button>
+    <button class="year-button">Year 3</button>
+    <button class="year-button">Year 4</button>
+    <button class="year-button">Year 5</button>
+    <button class="year-button">Year 6</button>
+  </div>
+
+</body>
+</html>
